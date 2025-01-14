@@ -4,11 +4,11 @@ PHASES = {
         "fields": {
                 "name": {
                 "type": "text_input",
-                "label": "What is your first name?",
+                "label": "What is your nick-name?",
             },
             "activity": {
             	"type": "text_input",
-            	"label": "What is one of your favorite activities?"
+            	"label": "What is one of your favourite activities?"
             }
         },
         "user_prompt": "My name is {name} and I like {activity}. Write a haiku about me and my activity.",
