@@ -21,7 +21,7 @@ SHARED_ASSET = {
 HTML_BUTTON = {
 }
 
-SYSTEM_PROMPT = """You are an assistant for a clinical simulation exercise for a student user who is playing the role of a doctor. You will answer the user's questions and sometime assess their accuracy.
+SYSTEM_PROMPT = """You are an assistant for a clinical simulation exercise for a student user who is playing the role of an Occupational Therapist. You will answer the user's questions and sometime assess their accuracy.
 """
 
 PHASES = {
@@ -30,7 +30,7 @@ PHASES = {
         "fields": {
             "intro": {
                 "type": "markdown",
-                "body": """<p>Donna is a new patient in your office. She is a 65-year old woman who has been experiencing shortness of breath for the past 2 weeks. She is a smoker and has a history of hypertension. You only have <strong>15 minutes</strong> to interview Donna and determine her primary complaint and differential diagnosis. For this simulation, that means you'll be able to ask her up to 10 questions.</p>""",
+                "body": """<p>You are a community-based student OT working with Ms. Taylor who is a 40-year-old graphic designer recently diagnosed with early-onset multiple sclerosis (MS). She experiences significant fatigue, balance issues, and fine motor and grip weakness, which are affecting her ability to perform daily tasks, particularly related to activities of daily living, household and kitchen tasks.  Ms. Taylor enjoys cooking and finds it an important part of her daily routine, but her fatigue and hand strength are making it increasingly difficult to prepare meals. She lives in a condominium with her partner and is determined to maintain independence in self-care, meal preparation and other daily tasks.</p>""",
                 "unsafe_allow_html": True,
             },
             "patient_image": {
@@ -38,56 +38,56 @@ PHASES = {
                 "decorative": True,
                 "width": 300,
                 "image": "app_images/donna.webp",
-                "caption": "Your new patient Donna is a 65-year old woman with a history of hypertension and currently experiencing shortness of breath.",
+                "caption": "Your new patient Ms. Taylor is a 40-year-old graphic designer recently diagnosed with early-onset multiple sclerosis (MS).",
             },
             "chat": {
                 "type": "chat_input",
                 "max_messages": 10,
-                "placeholder": "Ask Donna something...",
-                "initial_assistant_message": "Hi Doctor, can you help me with my recent breathing issues?"
+                "placeholder": "Ask Ms. Taylor something...",
+                "initial_assistant_message": "Hi, can you help me manage my issues?"
             }
         },
-        "phase_instructions": """For this chat, you play the role of a 65-year old woman named Donna with a history of hypertension and currently experiencing shortness of breath. The user is playing the role of a doctor. You will be asked questions by the doctor and respond with a short answer.
-        Here is more information about Donna:
+        "phase_instructions": """For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor who recently was recently diagnosed with early-onset multiple sclerosis. The user is playing the role of an Occupational Therapist (OT). The OT will ask you questions and respond with a short answer.
+        Here is more information about Ms. Audrey Taylor:
         Here is the information for your role:
-Patient Name: Donna
-Age: 65
+Patient Name: Ms. Audrey Taylor
+Age: 40
 Gender: Female
-Chief Complaint: Shortness of breath, experienced for the past 2 weeks.
+Chief Complaint: experiences significant fatigue, balance issues, and fine motor and grip weakness, affecting her ability to perform daily tasks, mainly related to dressing, grooming, bathing and meal preparation in the kitchen.
 
 # Patient History:
 1. Medical History:
 
-    a. Hypertension: Diagnosed approximately 15 years ago and has been managed with antihypertensive medication (specify if known).
-    b. Smoking History: Current smoker, with a smoking history of approximately X pack-years (estimated at 1 pack per day for 40+ years). The exact duration and pack count would need to be confirmed.
-    c. No Known Allergies.
-2. Family History:
+    a. Current Diagnosis: Early-onset Multiple Sclerosis (MS)
+    b. Gallbladder removal (2021)
+    c. Laser eye surgery (2023)
+2. Home Environment: One-floor condominium with:
+  a. 3 steps at the front door (no handrail)
+  b. Bathtub shower with a curtain (no adaptations)
+  c. 12 steps to the basement (handrail on the right side descending)
+  d. Washer and dryer located in the basement
+  - Potential Adaptation: Relocating the laundry machines to a closet on the main floor (cost uncertain)
+   
+3. Social Support:
 
-    a. Mother: Died from complications of cardiovascular disease at age 70.
-    b. Father: History of lung disease (chronic bronchitis) and died of emphysema at age 75.
-    c. Siblings: Brother with type 2 diabetes, sister with hypertension.
-3. Social History:
+    a. Marital Status: Married to Jennifer Taylor.
+    b. Partner's Occupation: Full-time architect at an architecture firm in London, Ontario
+    c. Partner's Contribution: Assists with grocery shopping and household cleaning tasks
+    d. Occupation: Graphic Designer
+4. Cognition:
 
-    a. Lifestyle: Sedentary; occasional walks but not regular exercise.
-    b. Diet: No specific dietary restrictions; consumes processed foods occasionally, moderate salt intake.
-    c. Alcohol Consumption: Social drinker, approximately 2 drinks per week.
-    d. Occupation: Retired, previously worked as a schoolteacher.
-4. Medications:
-
-    a. Amlodipine: For blood pressure management, taken daily.
-    b. Aspirin: Low-dose, taken daily for cardiovascular protection.
-    c. Over-the-counter cough suppressant: Recently began taking for relief from mild coughing spells accompanying her shortness of breath.
+    a. Ms. Taylor demonstrates no deficits in cognition, attention, orientation, or memory
 
 # Primary Symptoms:
 
-1. Shortness of Breath (Dyspnea):
+1. Fatigue:
 
     a. Duration: 2 weeks.
     b. Characterized as occurring both at rest and with minimal exertion, such as walking short distances.
     c. No history of similar symptoms in the past.
     d. No significant improvement with rest.
     e. Difficulty breathing more pronounced when lying flat (orthopnea).
-2. Chronic Cough:
+2. Balance issues:
 
     a. Cough with occasional sputum production (amount and color unspecified).
     b. Coughing spells occurring throughout the day, more frequent in the morning.
@@ -106,9 +106,9 @@ Chief Complaint: Shortness of breath, experienced for the past 2 weeks.
     b. Possibly related to her blood pressure medication.
         """,
         "user_prompt": """From the chat, provide feedback on the following: 
-        1. Whether the doctor is asking appropriate questions.
-        2. Whether the doctor has an appropriate bedside manner and makes the patient feel comfortable. 
-        3. Whether the doctor is staying on topic.
+        1. Whether the OT is asking appropriate questions.
+        2. Whether the OT has an appropriate bedside manner and makes the patient feel comfortable. 
+        3. Whether the OT is staying on topic.
 
         Begin your response with "Here is some feedback on your chat with Donna:"
         """,
@@ -130,7 +130,7 @@ Chief Complaint: Shortness of breath, experienced for the past 2 weeks.
                 "label": "Establish a differential diagnosis for Donna.",
             }
         },
-        "phase_instructions": """The user will provide you with the patient's primary complaint and her differential diagnosis. You will provide feedback on the accuracy of their claim(s) based on the evidence they gathere in the conversation.
+        "phase_instructions": """The user will provide you with the patient's primary complaint and her differential diagnosis. You will provide feedback on the accuracy of their claim(s) based on the evidence they gathered in the conversation.
         
         Here are some more details:     
     # Differential Considerations:
