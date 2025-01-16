@@ -26,11 +26,11 @@ SYSTEM_PROMPT = """You are an assistant for a clinical simulation exercise for a
 
 PHASES = {
     "interview": {
-        "name": "Patient Interview: Donna",
+        "name": "Patient Interview: Ms. Taylor",
         "fields": {
             "intro": {
                 "type": "markdown",
-                "body": """<p>You are a community-based student OT working with Ms. Taylor who is a 40-year-old graphic designer recently diagnosed with early-onset multiple sclerosis (MS). She experiences significant fatigue, balance issues, and fine motor and grip weakness, which are affecting her ability to perform daily tasks, particularly related to activities of daily living, household and kitchen tasks.  Ms. Taylor enjoys cooking and finds it an important part of her daily routine, but her fatigue and hand strength are making it increasingly difficult to prepare meals. She lives in a condominium with her partner and is determined to maintain independence in self-care, meal preparation and other daily tasks.</p>""",
+                "body": """<p>You are a community-based Occupational Therapy (OT) student working with Ms. Taylor who is a 40-year-old graphic designer recently diagnosed with early-onset multiple sclerosis (MS). She experiences significant fatigue, balance issues, and fine motor and grip weakness, which are affecting her ability to perform daily tasks, particularly related to activities of daily living, household and kitchen tasks.  Ms. Taylor enjoys cooking and finds it an important part of her daily routine, but her fatigue and hand strength are making it increasingly difficult to prepare meals. She lives in a condominium with her partner and is determined to maintain independence in self-care, meal preparation and other daily tasks.</p>""",
                 "unsafe_allow_html": True,
             },
             "patient_image": {
@@ -44,12 +44,12 @@ PHASES = {
                 "type": "chat_input",
                 "max_messages": 10,
                 "placeholder": "Ask Ms. Taylor something...",
-                "initial_assistant_message": "Hi, can you help me manage my issues?"
+                "initial_assistant_message": "Hi, can you help me manage the problems I am experiencing with everyday living?"
             }
         },
-        "phase_instructions": """For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor who recently was recently diagnosed with early-onset multiple sclerosis. The user is playing the role of an Occupational Therapist (OT). The OT will ask you questions and respond with a short answer.
+        "phase_instructions": """For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor who recently was recently diagnosed with early-onset multiple sclerosis. The user is a student playing the role of an Occupational Therapist (OT). 
+        The OT will ask you questions and respond with a short answer.
         Here is more information about Ms. Audrey Taylor:
-        Here is the information for your role:
 Patient Name: Ms. Audrey Taylor
 Age: 40
 Gender: Female
@@ -76,7 +76,7 @@ Chief Complaint: experiences significant fatigue, balance issues, and fine motor
     d. Occupation: Graphic Designer
 4. Cognition:
 
-    a. Ms. Taylor demonstrates no deficits in cognition, attention, orientation, or memory
+    a. demonstrates no deficits in cognition, attention, orientation, or memory
 
 # Primary Symptoms:
 
