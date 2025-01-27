@@ -21,7 +21,7 @@ SHARED_ASSET = {
 HTML_BUTTON = {
 }
 
-SYSTEM_PROMPT = """You are an assistant for a clinical simulation exercise for a student user who is playing the role of an Occupational Therapist. You will answer the user's questions and sometime assess their accuracy.
+SYSTEM_PROMPT = """You are an assistant for a clinical simulation exercise for a student user who is playing the role of an Occupational Therapist. You will answer the user's questions and sometimes assess their accuracy.
 """
 
 PHASES = {
@@ -47,8 +47,23 @@ PHASES = {
                 "initial_assistant_message": "Hi, can you help me manage the problems I am experiencing with everyday living?"
             }
         },
-        "phase_instructions": """For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor who recently was recently diagnosed with early-onset multiple sclerosis. The user is a student playing the role of an Occupational Therapist (OT). 
-        The OT will ask you questions and respond with a short answer.
+     "phase_instructions": " For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor, who recently was recently diagnosed with early-onset multiple sclerosis. 
+        The user is an Occupational Therapist (OT) student learning how to interview a client. 
+        The student will ask you questions and respond with a short answer.
+         # Manditory action by student.
+         1. The students must 
+        a. introduce themselves and describe the role of a student occupational therapist.
+b. obtain informed verbal consent to conduct an initial assessment. 
+The student must do both before moving to the next phase. If they fail to do so, give them hints.""",
+        "ai_response": True,
+        "allow_skip": False,
+        "show_prompt": False,
+        "read_only_prompt": False
+    },
+     
+        "phase_instructions": """For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor who recently was recently diagnosed with early-onset multiple sclerosis. 
+        The user is an Occupational Therapist (OT) student learning how to interview a client. 
+        The student will ask you questions and respond with a short answer.
         Here is more information about Ms. Audrey Taylor:
 Patient Name: Ms. Audrey Taylor
 Age: 40
@@ -106,11 +121,11 @@ Chief Complaint: experiences significant fatigue, balance issues, and fine motor
     b. Possibly related to her blood pressure medication.
         """,
         "user_prompt": """From the chat, provide feedback on the following: 
-        1. Whether the OT is asking appropriate questions.
-        2. Whether the OT has an appropriate bedside manner and makes the patient feel comfortable. 
-        3. Whether the OT is staying on topic.
+        1. Whether the OT student is asking appropriate questions.
+        2. Whether the OT student has an appropriate bedside manner and makes the patient feel comfortable. 
+        3. Whether the OT student is staying on topic.
 
-        Begin your response with "Here is some feedback on your chat with Donna:"
+        Begin your response with "Here is some feedback on your chat with Ms Taylor:"
         """,
         "ai_response": True,
         "allow_skip": False,
@@ -127,34 +142,13 @@ Chief Complaint: experiences significant fatigue, balance issues, and fine motor
             "diagnosis": {
                 "type": "text_area",
                 "height": 200,
-                "label": "Establish a differential diagnosis for Donna.",
+                "label": "Establish a differential diagnosis for Ms Taylor.",
             }
         },
-        "phase_instructions": """The user will provide you with the patient's primary complaint and her differential diagnosis. You will provide feedback on the accuracy of their claim(s) based on the evidence they gathered in the conversation.
-        
-        Here are some more details:     
-    # Differential Considerations:
-1. Chronic Obstructive Pulmonary Disease (COPD):
-    a. Likely given her smoking history, cough, and recent onset of dyspnea.
-    b. Recommend spirometry and imaging (chest X-ray or CT) for confirmation.
-2. Congestive Heart Failure (CHF):
-    a. Possibility due to dyspnea, edema, and history of hypertension.
-    b. Further investigation with echocardiography and BNP levels would be useful.
-3. Pulmonary Hypertension or Pulmonary Embolism:
-    a. While less common, consider ruling out due to sudden onset of symptoms and history of smoking.
-4. Lung Cancer:
-    a. Given her age and smoking history, screening might be advisable.
-
-# Plan for Further Evaluation:
-1. Diagnostic Imaging:
-    a. Chest X-ray or CT scan to evaluate lung structure.
-2. Laboratory Tests:
-    a. Basic metabolic panel, BNP, D-dimer (if PE suspected).
-3. Pulmonary Function Tests (PFTs):
-    a. Spirometry to assess for COPD or restrictive lung disease.
-4. Electrocardiogram (ECG):
-    a. To assess any cardiac involvement, such as ischemia or arrhythmia.""",
-        "user_prompt": "Donna's primary complaint is: {primary_complaint}. I believe her diagnosis is: {diagnosis}",
+        "phase_instructions": """
+        The user will collaboratively create three occupation-focused SMART goals with Ms. Taylor. (one goal in the area of Activities of Daily Living (ADL), one goal in the area of Instrumental Activities of Daily Living (IADL), and a third goal of choice.
+        """,
+        "user_prompt": "Ms Taylors's primary complaint is: {primary_complaint}. I believe her diagnosis is: {diagnosis}",
         "ai_response": True,
         
         "scored_phase": True,
