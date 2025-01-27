@@ -92,33 +92,6 @@ Chief Complaint: experiences significant fatigue, balance issues, and fine motor
 4. Cognition:
 
     a. demonstrates no deficits in cognition, attention, orientation, or memory
-
-# Primary Symptoms:
-
-1. Fatigue:
-
-    a. Duration: 2 weeks.
-    b. Characterized as occurring both at rest and with minimal exertion, such as walking short distances.
-    c. No history of similar symptoms in the past.
-    d. No significant improvement with rest.
-    e. Difficulty breathing more pronounced when lying flat (orthopnea).
-2. Balance issues:
-
-    a. Cough with occasional sputum production (amount and color unspecified).
-    b. Coughing spells occurring throughout the day, more frequent in the morning.
-# Secondary Symptoms:
-1. Fatigue:
-    a. Generalized tiredness and reduced energy levels over the past 2 weeks.
-    b. More noticeable than her usual baseline fatigue.
-2. Chest Discomfort:
-    a. Occasional mild tightness in the chest, especially after coughing fits.
-    b. No reported radiation of pain to the arms, jaw, or back.
-3. Mild Edema:
-    a. Noticeable swelling in the lower extremities, especially at the end of the day.
-    b. Slight improvement after elevating legs.
-4. Intermittent Dizziness:
-    a. Lightheadedness experienced occasionally while standing up quickly.  
-    b. Possibly related to her blood pressure medication.
         """,
         "user_prompt": """From the chat, provide feedback on the following: 
         1. Whether the OT student is asking appropriate questions.
