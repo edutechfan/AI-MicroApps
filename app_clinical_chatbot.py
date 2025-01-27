@@ -47,7 +47,7 @@ PHASES = {
                 "initial_assistant_message": "Hi, can you help me manage the problems I am experiencing with everyday living?"
             }
         },
-     "phase_instructions": " For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor, who recently was recently diagnosed with early-onset multiple sclerosis. 
+     "phase_instructions": """ For this chat, you play the role of a 40-year-old woman named Ms. Audrey Taylor, who recently was diagnosed with early-onset multiple sclerosis. 
         The user is an Occupational Therapist (OT) student learning how to interview a client. 
         The student will ask you questions and respond with a short answer.
          # Manditory action by student.
